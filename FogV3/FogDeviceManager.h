@@ -41,11 +41,13 @@ typedef void(^DeviceFailure)(NSError *error);
  停止搜索设备
  */
 -(void)stopSearchDevices;
+
 /**
  绑定设备
- 
+
  @param deviceId 设备id
  @param token token
+ @param extend 扩展参数(没有传nil)
  @param success 成功回调
  @param failure 失败回调
  */
@@ -110,13 +112,13 @@ typedef void(^DeviceFailure)(NSError *error);
  @param deviceId 设备id
  @param vercode 分享码
  @param bindingtype 用户分组
- @param extra 扩展参数
+ @param extend 扩展参数(没有传nil)
  @param iscallback 是否需要发送mqtt消息通知设备
  @param token token
  @param success 成功回调
  @param failure 失败回调
  */
--(void)addDeviceByVerCodeWithDeviceId:(NSString *)deviceId vercode:(NSString *)vercode bindingtype:(BindingType)bindingtype     extra:(NSString *)extra iscallback:(BOOL)iscallback token:(NSString *)token success:(DeviceSuccess)success failure:(DeviceFailure)failure;
+-(void)addDeviceByVerCodeWithDeviceId:(NSString *)deviceId vercode:(NSString *)vercode bindingtype:(BindingType)bindingtype     extend:(NSString *)extend iscallback:(BOOL)iscallback token:(NSString *)token success:(DeviceSuccess)success failure:(DeviceFailure)failure;
 
 /**
  获取设备用户列表

@@ -43,7 +43,12 @@
     [XMCenter sendRequest:^(XMRequest * _Nonnull request) {
         request.api=@"/v3/enduser/bindDevice/";
         request.headers=@{@"Authorization":[NSString stringWithFormat:@"JWT %@", token]};
-        request.parameters = @{@"deviceid":deviceId,@"extend":extend};
+        if (extend==nil) {
+            request.parameters = @{@"deviceid":deviceId};
+        }else
+        {
+            request.parameters = @{@"deviceid":deviceId,@"extend":extend};
+        }
         
     } onSuccess:^(id  _Nullable responseObject) {
         success(responseObject);
@@ -119,7 +124,7 @@
         
     }];
 }
--(void)addDeviceByVerCodeWithDeviceId:(NSString *)deviceId vercode:(NSString *)vercode bindingtype:(BindingType)bindingtype     extra:(NSString *)extra iscallback:(BOOL)iscallback token:(NSString *)token success:(DeviceSuccess)success failure:(DeviceFailure)failure
+-(void)addDeviceByVerCodeWithDeviceId:(NSString *)deviceId vercode:(NSString *)vercode bindingtype:(BindingType)bindingtype     extend:(NSString *)extend iscallback:(BOOL)iscallback token:(NSString *)token success:(DeviceSuccess)success failure:(DeviceFailure)failure
 {
     NSString *type;
     if (bindingtype==BINDTYPE_HOME) {
@@ -134,9 +139,19 @@
     [XMCenter sendRequest:^(XMRequest * _Nonnull request) {
         request.api = @"/v3/enduser/grantDevice/";
         request.headers = @{@"Authorization":[NSString stringWithFormat:@"JWT %@", token]};
-        request.parameters = @{@"deviceid":deviceId,
-                               @"vercode":vercode,
-                               @"bindingtype":type};
+        if (extend==nil) {
+            request.parameters = @{@"deviceid":deviceId,
+                                   @"vercode":vercode,
+                                   @"bindingtype":type};
+        }else
+        {
+            request.parameters = @{@"deviceid":deviceId,
+                                   @"vercode":vercode,
+                                   @"bindingtype":type,
+                                   @"extend":extend
+                                   };
+        }
+        
         
     }onSuccess:^(id  _Nullable responseObject) {
         success(responseObject);

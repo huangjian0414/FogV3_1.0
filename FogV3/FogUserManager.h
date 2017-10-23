@@ -62,6 +62,17 @@ typedef void(^UserFailure)(NSError *error);
  @param success 成功回调
  @param failure 失败回调
  */
+
+/**
+ 登录
+
+ @param loginName 登录用户名
+ @param password 登录密码
+ @param appid AppID
+ @param extend 扩展参数 (没有传nil)
+ @param success 成功回调
+ @param failure 失败回调
+ */
 -(void)loginWithName:(NSString *)loginName password:(NSString *)password appid:(NSString *)appid extend:(NSString *)extend success: (UserSuccess)success failure:(UserFailure)failure;
 
 /**
