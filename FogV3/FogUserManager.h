@@ -55,16 +55,6 @@ typedef void(^UserFailure)(NSError *error);
 
 /**
  登录
- 
- @param loginName 登录用户名
- @param password 登录密码
- @param appid AppID
- @param success 成功回调
- @param failure 失败回调
- */
-
-/**
- 登录
 
  @param loginName 登录用户名
  @param password 登录密码

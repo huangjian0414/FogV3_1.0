@@ -119,9 +119,9 @@
         request.parameters = @{@"deviceid":deviceId,@"role":@(role),@"granttimes":@(granttimes)};
         request.headers = @{@"Authorization": [NSString stringWithFormat:@"JWT %@", token]};
     } onSuccess:^(id  _Nullable responseObject) {
-        
+        success(responseObject);
     } onFailure:^(NSError * _Nullable error) {
-        
+        failure(error);
     }];
 }
 -(void)addDeviceByVerCodeWithDeviceId:(NSString *)deviceId vercode:(NSString *)vercode bindingtype:(BindingType)bindingtype     extend:(NSString *)extend iscallback:(BOOL)iscallback token:(NSString *)token success:(DeviceSuccess)success failure:(DeviceFailure)failure
@@ -186,5 +186,6 @@
     } onFailure:^(NSError * _Nullable error) {
         failure(error);
     }];
+    
 }
 @end
