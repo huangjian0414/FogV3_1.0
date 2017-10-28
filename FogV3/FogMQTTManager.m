@@ -25,6 +25,7 @@
     return mqttManager;
 }
 
+
 -(void)getMqttInfoWithToken:(NSString *)token success:(MqttSuccess)mqttSuccess failure:(MqttFailure)mqttFailure
 {
     [XMCenter sendRequest:^(XMRequest * _Nonnull request) {
@@ -61,6 +62,12 @@
 //    [self.mqttSession connectWithConnectHandler:^(NSError *error) {
 //        mqttFailure(error);
 //    }];
+}
+-(void)newMessage:(MQTTSession *)session data:(NSData *)data onTopic:(NSString *)topic qos:(MQTTQosLevel)qos retained:(BOOL)retained mid:(unsigned int)mid
+{
+    if ([self.delegate respondsToSelector:@selector(reciveData:onTopic:qos:retained:mid:)]) {
+        [self.delegate reciveData:data onTopic:topic qos:(QosLevel)qos retained:retained mid:mid];
+    }
 }
 
 -(void)addDeviceListenerWithTopic:(NSString *)topic atLevel:(QosLevel)qosLevel mqttReturn:(MqttReturn)mqttReturn
