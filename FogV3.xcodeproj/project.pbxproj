@@ -513,6 +513,7 @@
 			baseConfigurationReference = 3F5BD3703E6ED24A8F6693E6 /* Pods-FogV3.debug.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_MODULES_AUTOLINK = NO;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = NO;
@@ -544,6 +545,7 @@
 			baseConfigurationReference = E453FA06E986F63AF01A7243 /* Pods-FogV3.release.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_MODULES_AUTOLINK = NO;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = NO;
