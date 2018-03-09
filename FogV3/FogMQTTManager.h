@@ -7,9 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import <MQTTSession.h>
 @class MqttInfo;
-
 typedef void(^MqttSuccess)(id responseObject);
 typedef void(^MqttFailure)(NSError *error);
 typedef void(^MqttReturn)(NSError *error,NSArray<NSNumber *> *gQoss);
@@ -32,7 +31,7 @@ typedef NS_ENUM(UInt8, QosLevel) {
 @property (nonatomic,copy)MqttFailure mqttFailure;
 @property (nonatomic,copy)MqttReturn mqttReturn;
 
-
+@property (nonatomic,strong)MQTTSession *mqttSession;
 
 +(instancetype)sharedInstance;
 

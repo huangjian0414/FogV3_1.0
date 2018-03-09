@@ -12,7 +12,7 @@
 #import "MqttInfo.h"
 
 @interface FogMQTTManager ()<MQTTSessionDelegate>
-@property (nonatomic,strong)MQTTSession *mqttSession;
+
 @end
 @implementation FogMQTTManager
 +(instancetype)sharedInstance
