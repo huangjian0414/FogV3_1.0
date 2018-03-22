@@ -15,15 +15,10 @@ FOUNDATION_EXPORT double FogV3VersionNumber;
 FOUNDATION_EXPORT const unsigned char FogV3VersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <FogV3/PublicHeader.h>
-#import "AXZWifiLinkProtocol.h"
-#import "EasyLink.h"
-#import "EasyLinkForAXZWifiLink.h"
-#import "MXCHIPAirlink.h"
 
 #import "FogUserManager.h"
 #import "FogMQTTManager.h"
 #import "MqttInfo.h"
-#import "FogEasyLinkManager.h"
 #import "FogDeviceManager.h"
 #import "ZBBonjourService.h"
 

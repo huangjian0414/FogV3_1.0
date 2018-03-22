@@ -22,17 +22,17 @@
  
  @return 当前wifi名称
  */
--(NSString *)getSSID;
-
-/**
- 开始配网
- 
- @param password 当前wifi密码
- */
--(void)startEasyLinkWithPassword:(NSString *)password;
-
-/**
- 停止配网
- */
--(void)stopEasyLink;
+//-(NSString *)getSSID;
+//
+///**
+// 开始配网
+// 
+// @param password 当前wifi密码
+// */
+//-(void)startEasyLinkWithPassword:(NSString *)password;
+//
+///**
+// 停止配网
+// */
+//-(void)stopEasyLink;
 @end

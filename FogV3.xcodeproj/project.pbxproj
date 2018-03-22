@@ -16,16 +16,10 @@
 		7EE99BB61F998A3F003611FF /* FogMQTTManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE99BB41F998A3F003611FF /* FogMQTTManager.m */; };
 		7EE99BB91F998C15003611FF /* MqttInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EE99BB71F998C15003611FF /* MqttInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7EE99BBA1F998C15003611FF /* MqttInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE99BB81F998C15003611FF /* MqttInfo.m */; };
-		7EE99BC01F99A182003611FF /* FogEasyLinkManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EE99BBE1F99A182003611FF /* FogEasyLinkManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7EE99BC01F99A182003611FF /* FogEasyLinkManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EE99BBE1F99A182003611FF /* FogEasyLinkManager.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		7EE99BC11F99A182003611FF /* FogEasyLinkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE99BBF1F99A182003611FF /* FogEasyLinkManager.m */; };
-		7EE99BD21F99A31D003611FF /* libEasyLink.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EE99BCF1F99A2FC003611FF /* libEasyLink.a */; };
-		7EE99BD31F99A54E003611FF /* AXZWifiLinkProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EE99BC31F99A264003611FF /* AXZWifiLinkProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7EE99BD41F99A54E003611FF /* EasyLink.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EE99BC41F99A264003611FF /* EasyLink.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7EE99BD51F99A54E003611FF /* EasyLinkForAXZWifiLink.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EE99BC51F99A264003611FF /* EasyLinkForAXZWifiLink.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7EE99BD61F99A54E003611FF /* MXCHIPAirlink.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EE99BC81F99A264003611FF /* MXCHIPAirlink.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7EE99BD91F99A5BC003611FF /* FogDeviceManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EE99BD71F99A5BC003611FF /* FogDeviceManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7EE99BDA1F99A5BC003611FF /* FogDeviceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE99BD81F99A5BC003611FF /* FogDeviceManager.m */; };
-		7EE99C2B1F99E4BC003611FF /* libPods-FogV3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EE99C2C1F99E4BC003611FF /* libPods-FogV3.a */; };
 		7EE99C2D1F99E5C3003611FF /* ZBBonjourService.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EE99BE01F99AC86003611FF /* ZBBonjourService.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7EE99C311F99E7A2003611FF /* ZBBonjourService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE99BE11F99AC86003611FF /* ZBBonjourService.m */; };
 /* End PBXBuildFile section */
@@ -56,13 +50,6 @@
 		7EE99BB81F998C15003611FF /* MqttInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MqttInfo.m; sourceTree = "<group>"; };
 		7EE99BBE1F99A182003611FF /* FogEasyLinkManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FogEasyLinkManager.h; sourceTree = "<group>"; };
 		7EE99BBF1F99A182003611FF /* FogEasyLinkManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FogEasyLinkManager.m; sourceTree = "<group>"; };
-		7EE99BC31F99A264003611FF /* AXZWifiLinkProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXZWifiLinkProtocol.h; sourceTree = "<group>"; };
-		7EE99BC41F99A264003611FF /* EasyLink.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EasyLink.h; sourceTree = "<group>"; };
-		7EE99BC51F99A264003611FF /* EasyLinkForAXZWifiLink.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EasyLinkForAXZWifiLink.h; sourceTree = "<group>"; };
-		7EE99BC61F99A264003611FF /* EasyLinkForAXZWifiLink.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EasyLinkForAXZWifiLink.m; sourceTree = "<group>"; };
-		7EE99BC71F99A264003611FF /* libEasyLink.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libEasyLink.a; sourceTree = "<group>"; };
-		7EE99BC81F99A264003611FF /* MXCHIPAirlink.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXCHIPAirlink.h; sourceTree = "<group>"; };
-		7EE99BC91F99A264003611FF /* MXCHIPAirlink.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXCHIPAirlink.m; sourceTree = "<group>"; };
 		7EE99BCB1F99A2FC003611FF /* AXZWifiLinkProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXZWifiLinkProtocol.h; sourceTree = "<group>"; };
 		7EE99BCC1F99A2FC003611FF /* EasyLink.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EasyLink.h; sourceTree = "<group>"; };
 		7EE99BCD1F99A2FC003611FF /* EasyLinkForAXZWifiLink.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EasyLinkForAXZWifiLink.h; sourceTree = "<group>"; };
@@ -87,8 +74,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7EE99C2B1F99E4BC003611FF /* libPods-FogV3.a in Frameworks */,
-				7EE99BD21F99A31D003611FF /* libEasyLink.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,7 +121,6 @@
 			isa = PBXGroup;
 			children = (
 				7EE99BDB1F99AC86003611FF /* ZBBonjourService */,
-				7EE99BC21F99A264003611FF /* EasyLink */,
 				7EE99B8E1F989E75003611FF /* FogV3.h */,
 				7EE99BA51F98A0E2003611FF /* FogUserManager.h */,
 				7EE99BA61F98A0E2003611FF /* FogUserManager.m */,
@@ -160,20 +144,6 @@
 				7EE99B9B1F989E75003611FF /* Info.plist */,
 			);
 			path = FogV3Tests;
-			sourceTree = "<group>";
-		};
-		7EE99BC21F99A264003611FF /* EasyLink */ = {
-			isa = PBXGroup;
-			children = (
-				7EE99BC31F99A264003611FF /* AXZWifiLinkProtocol.h */,
-				7EE99BC41F99A264003611FF /* EasyLink.h */,
-				7EE99BC51F99A264003611FF /* EasyLinkForAXZWifiLink.h */,
-				7EE99BC61F99A264003611FF /* EasyLinkForAXZWifiLink.m */,
-				7EE99BC71F99A264003611FF /* libEasyLink.a */,
-				7EE99BC81F99A264003611FF /* MXCHIPAirlink.h */,
-				7EE99BC91F99A264003611FF /* MXCHIPAirlink.m */,
-			);
-			path = EasyLink;
 			sourceTree = "<group>";
 		};
 		7EE99BCA1F99A2FC003611FF /* EasyLink */ = {
@@ -224,13 +194,9 @@
 				7EE99B9C1F989E75003611FF /* FogV3.h in Headers */,
 				7EE99BB91F998C15003611FF /* MqttInfo.h in Headers */,
 				7EE99BB51F998A3F003611FF /* FogMQTTManager.h in Headers */,
-				7EE99BD31F99A54E003611FF /* AXZWifiLinkProtocol.h in Headers */,
-				7EE99BC01F99A182003611FF /* FogEasyLinkManager.h in Headers */,
-				7EE99BD51F99A54E003611FF /* EasyLinkForAXZWifiLink.h in Headers */,
-				7EE99BD41F99A54E003611FF /* EasyLink.h in Headers */,
-				7EE99BD61F99A54E003611FF /* MXCHIPAirlink.h in Headers */,
 				7EE99BD91F99A5BC003611FF /* FogDeviceManager.h in Headers */,
 				7EE99C2D1F99E5C3003611FF /* ZBBonjourService.h in Headers */,
+				7EE99BC01F99A182003611FF /* FogEasyLinkManager.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
