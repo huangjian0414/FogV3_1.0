@@ -22,4 +22,3 @@ FOUNDATION_EXPORT const unsigned char FogV3VersionString[];
 #import "FogDeviceManager.h"
 #import "ZBBonjourService.h"
 
-#import "FogV3Center.h"
