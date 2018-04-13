@@ -8,7 +8,8 @@
 
 #import "FogDeviceManager.h"
 #import "ZBBonjourService.h"
-#import <XMNetworking.h>
+#import "HJNetworking.h"
+#import "NSMutableDictionary+HJSafeSet.h"
 @interface FogDeviceManager ()<ZBBonjourServiceDelegate>
 
 @end
@@ -38,89 +39,128 @@
 {
     [[ZBBonjourService sharedInstance]stopSearchDevice];
 }
+-(void)bindDeviceWithParams:(NSDictionary *)params success:(DeviceSuccess)success failure:(DeviceFailure)failure
+{
+    [[HJNetworking sharedInstance]hj_RequestWithType:HJHTTPMethod_POST Api:@"/enduser/bindDevice/" Params:params Header:[HJNetworking sharedInstance].generalHeader success:^(id responseObject) {
+        success(responseObject);
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+}
 -(void)bindDeviceWithDeviceId:(NSString *)deviceId token:(NSString *)token extend:(NSString *)extend success:(DeviceSuccess)success failure:(DeviceFailure)failure
 {
-    [XMCenter sendRequest:^(XMRequest * _Nonnull request) {
-        request.api=@"/v3/enduser/bindDevice/";
-        request.headers=@{@"Authorization":[NSString stringWithFormat:@"JWT %@", token]};
-        if (extend==nil) {
-            request.parameters = @{@"deviceid":deviceId};
-        }else
-        {
-            request.parameters = @{@"deviceid":deviceId,@"extend":extend};
-        }
-        
-    } onSuccess:^(id  _Nullable responseObject) {
+    NSMutableDictionary *params=[NSMutableDictionary dictionary];
+    [params hj_dictSet:deviceId forKey:@"deviceid"];
+    if (extend) {
+        [params hj_dictSet:extend forKey:@"extend"];
+    }
+    [[HJNetworking sharedInstance]hj_RequestWithType:HJHTTPMethod_POST Api:@"/enduser/bindDevice/" Params:params Header:[HJNetworking sharedInstance].generalHeader success:^(id responseObject) {
         success(responseObject);
-        
-    } onFailure:^(NSError * _Nullable error) {
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+    
+}
+-(void)unBindDeviceWithParams:(NSDictionary *)params success:(DeviceSuccess)success failure:(DeviceFailure)failure
+{
+    [[HJNetworking sharedInstance]hj_RequestWithType:HJHTTPMethod_PUT Api:@"/enduser/unbindDevice/" Params:params Header:[HJNetworking sharedInstance].generalHeader success:^(id responseObject) {
+        success(responseObject);
+    } failure:^(NSError *error) {
         failure(error);
     }];
 }
 -(void)unBindDeviceWithDeviceId:(NSString *)deviceId token:(NSString *)token success:(DeviceSuccess)success failure:(DeviceFailure)failure
 {
-    [XMCenter sendRequest:^(XMRequest * _Nonnull request) {
-        request.api = @"/v3/enduser/unbindDevice/";
-        request.httpMethod = kXMHTTPMethodPUT;
-        request.parameters = @{@"deviceid":deviceId};
-        request.headers = @{@"Authorization": [NSString stringWithFormat:@"JWT %@", token]};
-    } onSuccess:^(id  _Nullable responseObject) {
+    NSMutableDictionary *params=[NSMutableDictionary dictionary];
+    [params hj_dictSet:deviceId forKey:@"deviceid"];
+    [[HJNetworking sharedInstance]hj_RequestWithType:HJHTTPMethod_PUT Api:@"/enduser/unbindDevice/" Params:params Header:[HJNetworking sharedInstance].generalHeader success:^(id responseObject) {
         success(responseObject);
-    } onFailure:^(NSError * _Nullable error) {
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+    
+}
+-(void)getDeviceListWithParams:(NSDictionary *)params success:(DeviceSuccess)success failure:(DeviceFailure)failure
+{
+    [[HJNetworking sharedInstance]hj_RequestWithType:HJHTTPMethod_GET Api:@"/enduser/deviceList/" Params:params Header:[HJNetworking sharedInstance].generalHeader success:^(id responseObject) {
+        success(responseObject);
+    } failure:^(NSError *error) {
         failure(error);
     }];
 }
 -(void)getDeviceListWithToken:(NSString *)token success:(DeviceSuccess)success failure:(DeviceFailure)failure
 {
-    [XMCenter sendRequest:^(XMRequest * _Nonnull request) {
-        request.api=@"/v3/enduser/deviceList/";
-        request.httpMethod=kXMHTTPMethodGET;
-        request.headers=@{@"Authorization":[NSString stringWithFormat:@"JWT %@", token]};
-    } onSuccess:^(id  _Nullable responseObject) {
-        
+    [[HJNetworking sharedInstance]hj_RequestWithType:HJHTTPMethod_GET Api:@"/enduser/deviceList/" Params:nil Header:[HJNetworking sharedInstance].generalHeader success:^(id responseObject) {
         success(responseObject);
-    } onFailure:^(NSError * _Nullable error) {
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+}
+-(void)getDeviceInfoWithParams:(NSDictionary *)params success:(DeviceSuccess)success failure:(DeviceFailure)failure
+{
+    [[HJNetworking sharedInstance]hj_RequestWithType:HJHTTPMethod_GET Api:@"/enduser/deviceInfo/" Params:params Header:[HJNetworking sharedInstance].generalHeader success:^(id responseObject) {
+        success(responseObject);
+    } failure:^(NSError *error) {
         failure(error);
     }];
 }
 -(void)getDeviceInfoWithDeviceId:(NSString *)deviceId token:(NSString *)token success:(DeviceSuccess)success failure:(DeviceFailure)failure
 {
-    [XMCenter sendRequest:^(XMRequest * _Nonnull request) {
-        request.api=@"/v3/enduser/deviceInfo/";
-        request.httpMethod=kXMHTTPMethodGET;
-        request.headers=@{@"Authorization":[NSString stringWithFormat:@"JWT %@", token]};
-        request.parameters = @{@"deviceid":deviceId};
-    } onSuccess:^(id  _Nullable responseObject) {
-        
+    NSMutableDictionary *params=[NSMutableDictionary dictionary];
+    [params hj_dictSet:deviceId forKey:@"deviceid"];
+    [[HJNetworking sharedInstance]hj_RequestWithType:HJHTTPMethod_GET Api:@"/enduser/deviceInfo/" Params:params Header:[HJNetworking sharedInstance].generalHeader success:^(id responseObject) {
         success(responseObject);
-    } onFailure:^(NSError * _Nullable error) {
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+    
+}
+-(void)updateDeviceAliasWithParams:(NSDictionary *)params success:(DeviceSuccess)success failure:(DeviceFailure)failure
+{
+    [[HJNetworking sharedInstance]hj_RequestWithType:HJHTTPMethod_PUT Api:@"/enduser/updateDeviceAlias/" Params:params Header:[HJNetworking sharedInstance].generalHeader success:^(id responseObject) {
+        success(responseObject);
+    } failure:^(NSError *error) {
         failure(error);
     }];
 }
 -(void)updateDeviceAliasWithDeviceId:(NSString *)deviceId  alias:(NSString *)alias token:(NSString *)token success:(DeviceSuccess)success failure:(DeviceFailure)failure
 {
-    [XMCenter sendRequest:^(XMRequest * _Nonnull request) {
-        request.api=@"/v3/enduser/updateDeviceAlias/";
-        request.httpMethod=kXMHTTPMethodPUT;
-        request.headers=@{@"Authorization":[NSString stringWithFormat:@"JWT %@", token]};
-        request.parameters=@{@"deviceid":deviceId,@"alias":alias};
-    } onSuccess:^(id  _Nullable responseObject) {
-        
+    NSMutableDictionary *params=[NSMutableDictionary dictionary];
+    [params hj_dictSet:deviceId forKey:@"deviceid"];
+    [params hj_dictSet:alias forKey:@"alias"];
+    [[HJNetworking sharedInstance]hj_RequestWithType:HJHTTPMethod_PUT Api:@"/enduser/updateDeviceAlias/" Params:params Header:[HJNetworking sharedInstance].generalHeader success:^(id responseObject) {
         success(responseObject);
-    } onFailure:^(NSError * _Nullable error) {
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+   
+}
+-(void)getShareVerCodeWithParams:(NSDictionary *)params success:(DeviceSuccess)success failure:(DeviceFailure)failure
+{
+    [[HJNetworking sharedInstance]hj_RequestWithType:HJHTTPMethod_POST Api:@"/enduser/shareCode/" Params:params Header:[HJNetworking sharedInstance].generalHeader success:^(id responseObject) {
+        success(responseObject);
+    } failure:^(NSError *error) {
         failure(error);
     }];
 }
 -(void)getShareVerCodeWithDeviceId:(NSString *)deviceId role:(NSInteger)role granttimes:(NSInteger)granttimes token:(NSString *)token success:(DeviceSuccess)success failure:(DeviceFailure)failure
 {
-    [XMCenter sendRequest:^(XMRequest * _Nonnull request) {
-        request.api = @"/v3/enduser/shareCode/";
-        request.httpMethod = kXMHTTPMethodPOST;
-        request.parameters = @{@"deviceid":deviceId,@"role":@(role),@"granttimes":@(granttimes)};
-        request.headers = @{@"Authorization": [NSString stringWithFormat:@"JWT %@", token]};
-    } onSuccess:^(id  _Nullable responseObject) {
+    NSMutableDictionary *params=[NSMutableDictionary dictionary];
+    [params hj_dictSet:deviceId forKey:@"deviceid"];
+    [params hj_dictSet:@(role) forKey:@"role"];
+    [params hj_dictSet:@(granttimes) forKey:@"granttimes"];
+    [[HJNetworking sharedInstance]hj_RequestWithType:HJHTTPMethod_POST Api:@"/enduser/shareCode/" Params:params Header:[HJNetworking sharedInstance].generalHeader success:^(id responseObject) {
         success(responseObject);
-    } onFailure:^(NSError * _Nullable error) {
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+   
+}
+-(void)addDeviceByVerCodeWithParams:(NSDictionary *)params success:(DeviceSuccess)success failure:(DeviceFailure)failure
+{
+    [[HJNetworking sharedInstance]hj_RequestWithType:HJHTTPMethod_POST Api:@"/enduser/grantDevice/" Params:params Header:[HJNetworking sharedInstance].generalHeader success:^(id responseObject) {
+        success(responseObject);
+    } failure:^(NSError *error) {
         failure(error);
     }];
 }
@@ -136,54 +176,55 @@
     {
         type=@"other";
     }
-    [XMCenter sendRequest:^(XMRequest * _Nonnull request) {
-        request.api = @"/v3/enduser/grantDevice/";
-        request.headers = @{@"Authorization":[NSString stringWithFormat:@"JWT %@", token]};
-        if (extend==nil) {
-            request.parameters = @{@"deviceid":deviceId,
-                                   @"vercode":vercode,
-                                   @"bindingtype":type};
-        }else
-        {
-            request.parameters = @{@"deviceid":deviceId,
-                                   @"vercode":vercode,
-                                   @"bindingtype":type,
-                                   @"extend":extend
-                                   };
-        }
-        
-        
-    }onSuccess:^(id  _Nullable responseObject) {
+    NSMutableDictionary *params=[NSMutableDictionary dictionary];
+    [params hj_dictSet:deviceId forKey:@"deviceid"];
+    [params hj_dictSet:vercode forKey:@"vercode"];
+    [params hj_dictSet:type forKey:@"bindingtype"];
+    if (extend) {
+        [params hj_dictSet:extend forKey:@"extend"];
+    }
+    [[HJNetworking sharedInstance]hj_RequestWithType:HJHTTPMethod_POST Api:@"/enduser/grantDevice/" Params:params Header:[HJNetworking sharedInstance].generalHeader success:^(id responseObject) {
         success(responseObject);
-    } onFailure:^(NSError * _Nullable error) {
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+    
+}
+-(void)getMemberListWithParams:(NSDictionary *)params success:(DeviceSuccess)success failure:(DeviceFailure)failure
+{
+    [[HJNetworking sharedInstance]hj_RequestWithType:HJHTTPMethod_GET Api:@"/enduser/enduserList/" Params:params Header:[HJNetworking sharedInstance].generalHeader success:^(id responseObject) {
+        success(responseObject);
+    } failure:^(NSError *error) {
         failure(error);
     }];
 }
 -(void)getMemberListWithDeviceId:(NSString *)deviceId token:(NSString *)token success:(DeviceSuccess)success failure:(DeviceFailure)failure;
 {
-    [XMCenter sendRequest:^(XMRequest * _Nonnull request) {
-        request.api=@"/v3/enduser/enduserList/";
-        request.httpMethod=kXMHTTPMethodGET;
-        request.headers=@{@"Authorization":[NSString stringWithFormat:@"JWT %@", token]};
-        request.parameters = @{@"deviceid":deviceId};
-    } onSuccess:^(id  _Nullable responseObject) {
-        
+    NSMutableDictionary *params=[NSMutableDictionary dictionary];
+    [params hj_dictSet:deviceId forKey:@"deviceid"];
+    [[HJNetworking sharedInstance]hj_RequestWithType:HJHTTPMethod_GET Api:@"/enduser/enduserList/" Params:params Header:[HJNetworking sharedInstance].generalHeader success:^(id responseObject) {
         success(responseObject);
-    } onFailure:^(NSError * _Nullable error) {
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+    
+}
+-(void)removeBindRoleWithParams:(NSDictionary *)params success:(DeviceSuccess)success failure:(DeviceFailure)failure
+{
+    [[HJNetworking sharedInstance]hj_RequestWithType:HJHTTPMethod_PUT Api:@"/enduser/removeBindRole/" Params:params Header:[HJNetworking sharedInstance].generalHeader success:^(id responseObject) {
+        success(responseObject);
+    } failure:^(NSError *error) {
         failure(error);
     }];
 }
 -(void)removeBindRoleWithDeviceId:(NSString *)deviceId enduserid:(NSString *)enduserid token:(NSString *)token success:(DeviceSuccess)success failure:(DeviceFailure)failure
 {
-    [XMCenter sendRequest:^(XMRequest * _Nonnull request) {
-        request.api=@"/v3/enduser/removeBindRole/";
-        request.httpMethod=kXMHTTPMethodPUT;
-        request.headers=@{@"Authorization":[NSString stringWithFormat:@"JWT %@", token]};
-        request.parameters=@{@"deviceid":deviceId,@"enduserid":enduserid};
-    } onSuccess:^(id  _Nullable responseObject) {
-        
+    NSMutableDictionary *params=[NSMutableDictionary dictionary];
+    [params hj_dictSet:deviceId forKey:@"deviceid"];
+    [params hj_dictSet:enduserid forKey:@"enduserid"];
+    [[HJNetworking sharedInstance]hj_RequestWithType:HJHTTPMethod_PUT Api:@"/enduser/removeBindRole/" Params:params Header:[HJNetworking sharedInstance].generalHeader success:^(id responseObject) {
         success(responseObject);
-    } onFailure:^(NSError * _Nullable error) {
+    } failure:^(NSError *error) {
         failure(error);
     }];
     

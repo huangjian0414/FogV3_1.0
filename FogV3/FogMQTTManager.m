@@ -7,9 +7,10 @@
 //
 
 #import "FogMQTTManager.h"
-#import <XMNetworking.h>
+
 #import <MQTTClient/MQTTClient.h>
 #import "MqttInfo.h"
+#import "HJNetworking.h"
 
 @interface FogMQTTManager ()<MQTTSessionDelegate>
 
@@ -28,17 +29,12 @@
 
 -(void)getMqttInfoWithToken:(NSString *)token success:(MqttSuccess)mqttSuccess failure:(MqttFailure)mqttFailure
 {
-    [XMCenter sendRequest:^(XMRequest * _Nonnull request) {
-        request.api=@"/v3/enduser/mqttInfo/";
-        request.httpMethod=kXMHTTPMethodGET;
-        request.headers=@{@"Authorization":[NSString stringWithFormat:@"JWT %@", token]};
-        
-    } onSuccess:^(id  _Nullable responseObject) {
+    [[HJNetworking sharedInstance]hj_RequestWithType:HJHTTPMethod_GET Api:@"/enduser/mqttInfo/" Params:nil Header:[HJNetworking sharedInstance].generalHeader success:^(id responseObject) {
         mqttSuccess(responseObject);
-        
-    } onFailure:^(NSError * _Nullable error) {
+    } failure:^(NSError *error) {
         mqttFailure(error);
     }];
+   
 }
 
 -(void)startListenDeviceWithMqttInfo:(MqttInfo *)mqttInfo usingSSL:(BOOL)usingSSL connectHandler:(MqttFailure)mqttFailure

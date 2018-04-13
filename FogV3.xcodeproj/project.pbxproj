@@ -9,8 +9,10 @@
 /* Begin PBXBuildFile section */
 		7E762C752080512800DBF0A0 /* HJNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E762C732080512700DBF0A0 /* HJNetworking.h */; };
 		7E762C762080512800DBF0A0 /* HJNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E762C742080512700DBF0A0 /* HJNetworking.m */; };
-		7E762C7D20805C6000DBF0A0 /* FogV3Center.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E762C7B20805C6000DBF0A0 /* FogV3Center.h */; };
+		7E762C7D20805C6000DBF0A0 /* FogV3Center.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E762C7B20805C6000DBF0A0 /* FogV3Center.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7E762C7E20805C6000DBF0A0 /* FogV3Center.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E762C7C20805C6000DBF0A0 /* FogV3Center.m */; };
+		7E762C81208077F600DBF0A0 /* NSMutableDictionary+HJSafeSet.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E762C7F208077F600DBF0A0 /* NSMutableDictionary+HJSafeSet.h */; };
+		7E762C82208077F600DBF0A0 /* NSMutableDictionary+HJSafeSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E762C80208077F600DBF0A0 /* NSMutableDictionary+HJSafeSet.m */; };
 		7EE99B951F989E75003611FF /* FogV3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EE99B8B1F989E75003611FF /* FogV3.framework */; };
 		7EE99B9A1F989E75003611FF /* FogV3Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE99B991F989E75003611FF /* FogV3Tests.m */; };
 		7EE99B9C1F989E75003611FF /* FogV3.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EE99B8E1F989E75003611FF /* FogV3.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -20,7 +22,7 @@
 		7EE99BB61F998A3F003611FF /* FogMQTTManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE99BB41F998A3F003611FF /* FogMQTTManager.m */; };
 		7EE99BB91F998C15003611FF /* MqttInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EE99BB71F998C15003611FF /* MqttInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7EE99BBA1F998C15003611FF /* MqttInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE99BB81F998C15003611FF /* MqttInfo.m */; };
-		7EE99BC01F99A182003611FF /* FogEasyLinkManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EE99BBE1F99A182003611FF /* FogEasyLinkManager.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		7EE99BC01F99A182003611FF /* FogEasyLinkManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EE99BBE1F99A182003611FF /* FogEasyLinkManager.h */; };
 		7EE99BC11F99A182003611FF /* FogEasyLinkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE99BBF1F99A182003611FF /* FogEasyLinkManager.m */; };
 		7EE99BD91F99A5BC003611FF /* FogDeviceManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EE99BD71F99A5BC003611FF /* FogDeviceManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7EE99BDA1F99A5BC003611FF /* FogDeviceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE99BD81F99A5BC003611FF /* FogDeviceManager.m */; };
@@ -44,6 +46,8 @@
 		7E762C742080512700DBF0A0 /* HJNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJNetworking.m; sourceTree = "<group>"; };
 		7E762C7B20805C6000DBF0A0 /* FogV3Center.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FogV3Center.h; sourceTree = "<group>"; };
 		7E762C7C20805C6000DBF0A0 /* FogV3Center.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FogV3Center.m; sourceTree = "<group>"; };
+		7E762C7F208077F600DBF0A0 /* NSMutableDictionary+HJSafeSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+HJSafeSet.h"; sourceTree = "<group>"; };
+		7E762C80208077F600DBF0A0 /* NSMutableDictionary+HJSafeSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+HJSafeSet.m"; sourceTree = "<group>"; };
 		7EE99B8B1F989E75003611FF /* FogV3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FogV3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EE99B8E1F989E75003611FF /* FogV3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FogV3.h; sourceTree = "<group>"; };
 		7EE99B8F1F989E75003611FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -58,13 +62,6 @@
 		7EE99BB81F998C15003611FF /* MqttInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MqttInfo.m; sourceTree = "<group>"; };
 		7EE99BBE1F99A182003611FF /* FogEasyLinkManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FogEasyLinkManager.h; sourceTree = "<group>"; };
 		7EE99BBF1F99A182003611FF /* FogEasyLinkManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FogEasyLinkManager.m; sourceTree = "<group>"; };
-		7EE99BCB1F99A2FC003611FF /* AXZWifiLinkProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXZWifiLinkProtocol.h; sourceTree = "<group>"; };
-		7EE99BCC1F99A2FC003611FF /* EasyLink.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EasyLink.h; sourceTree = "<group>"; };
-		7EE99BCD1F99A2FC003611FF /* EasyLinkForAXZWifiLink.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EasyLinkForAXZWifiLink.h; sourceTree = "<group>"; };
-		7EE99BCE1F99A2FC003611FF /* EasyLinkForAXZWifiLink.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EasyLinkForAXZWifiLink.m; sourceTree = "<group>"; };
-		7EE99BCF1F99A2FC003611FF /* libEasyLink.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libEasyLink.a; sourceTree = "<group>"; };
-		7EE99BD01F99A2FC003611FF /* MXCHIPAirlink.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXCHIPAirlink.h; sourceTree = "<group>"; };
-		7EE99BD11F99A2FC003611FF /* MXCHIPAirlink.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXCHIPAirlink.m; sourceTree = "<group>"; };
 		7EE99BD71F99A5BC003611FF /* FogDeviceManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FogDeviceManager.h; sourceTree = "<group>"; };
 		7EE99BD81F99A5BC003611FF /* FogDeviceManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FogDeviceManager.m; sourceTree = "<group>"; };
 		7EE99BDC1F99AC86003611FF /* NSData+IPAddress.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSData+IPAddress.h"; sourceTree = "<group>"; };
@@ -73,7 +70,6 @@
 		7EE99BDF1F99AC86003611FF /* NSDictionary+ZBAdd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+ZBAdd.m"; sourceTree = "<group>"; };
 		7EE99BE01F99AC86003611FF /* ZBBonjourService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBBonjourService.h; sourceTree = "<group>"; };
 		7EE99BE11F99AC86003611FF /* ZBBonjourService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBBonjourService.m; sourceTree = "<group>"; };
-		7EE99C2C1F99E4BC003611FF /* libPods-FogV3.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-FogV3.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E453FA06E986F63AF01A7243 /* Pods-FogV3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FogV3.release.xcconfig"; path = "Pods/Target Support Files/Pods-FogV3/Pods-FogV3.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -99,8 +95,6 @@
 		6B3D132B5684BBB8A5568315 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7EE99C2C1F99E4BC003611FF /* libPods-FogV3.a */,
-				7EE99BCA1F99A2FC003611FF /* EasyLink */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -144,6 +138,8 @@
 				7EE99BB81F998C15003611FF /* MqttInfo.m */,
 				7E762C732080512700DBF0A0 /* HJNetworking.h */,
 				7E762C742080512700DBF0A0 /* HJNetworking.m */,
+				7E762C7F208077F600DBF0A0 /* NSMutableDictionary+HJSafeSet.h */,
+				7E762C80208077F600DBF0A0 /* NSMutableDictionary+HJSafeSet.m */,
 				7EE99B8F1F989E75003611FF /* Info.plist */,
 			);
 			path = FogV3;
@@ -156,21 +152,6 @@
 				7EE99B9B1F989E75003611FF /* Info.plist */,
 			);
 			path = FogV3Tests;
-			sourceTree = "<group>";
-		};
-		7EE99BCA1F99A2FC003611FF /* EasyLink */ = {
-			isa = PBXGroup;
-			children = (
-				7EE99BCB1F99A2FC003611FF /* AXZWifiLinkProtocol.h */,
-				7EE99BCC1F99A2FC003611FF /* EasyLink.h */,
-				7EE99BCD1F99A2FC003611FF /* EasyLinkForAXZWifiLink.h */,
-				7EE99BCE1F99A2FC003611FF /* EasyLinkForAXZWifiLink.m */,
-				7EE99BCF1F99A2FC003611FF /* libEasyLink.a */,
-				7EE99BD01F99A2FC003611FF /* MXCHIPAirlink.h */,
-				7EE99BD11F99A2FC003611FF /* MXCHIPAirlink.m */,
-			);
-			name = EasyLink;
-			path = FogV3/EasyLink;
 			sourceTree = "<group>";
 		};
 		7EE99BDB1F99AC86003611FF /* ZBBonjourService */ = {
@@ -203,14 +184,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				7EE99BA71F98A0E2003611FF /* FogUserManager.h in Headers */,
-				7E762C7D20805C6000DBF0A0 /* FogV3Center.h in Headers */,
 				7EE99B9C1F989E75003611FF /* FogV3.h in Headers */,
 				7EE99BB91F998C15003611FF /* MqttInfo.h in Headers */,
 				7EE99BB51F998A3F003611FF /* FogMQTTManager.h in Headers */,
 				7EE99BD91F99A5BC003611FF /* FogDeviceManager.h in Headers */,
+				7E762C7D20805C6000DBF0A0 /* FogV3Center.h in Headers */,
 				7EE99C2D1F99E5C3003611FF /* ZBBonjourService.h in Headers */,
 				7E762C752080512800DBF0A0 /* HJNetworking.h in Headers */,
 				7EE99BC01F99A182003611FF /* FogEasyLinkManager.h in Headers */,
+				7E762C81208077F600DBF0A0 /* NSMutableDictionary+HJSafeSet.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,6 +332,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E762C82208077F600DBF0A0 /* NSMutableDictionary+HJSafeSet.m in Sources */,
 				7EE99C311F99E7A2003611FF /* ZBBonjourService.m in Sources */,
 				7E762C7E20805C6000DBF0A0 /* FogV3Center.m in Sources */,
 				7EE99BBA1F998C15003611FF /* MqttInfo.m in Sources */,

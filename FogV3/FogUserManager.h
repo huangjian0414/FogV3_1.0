@@ -23,7 +23,15 @@ typedef void(^UserFailure)(NSError *error);
 
 
 /**
- 获取验证码
+ 获取验证吗
+
+ @param params 参数
+ @param success 成功回调
+ @param failure 失败回调
+ */
+-(void)getVerifyCodeWithParams:(NSDictionary *)params success: (UserSuccess)success failure:(UserFailure)failure;
+/**
+ 获取验证码 (旧)
  
  @param loginName 登录用户名
  @param appid AppID
@@ -32,8 +40,18 @@ typedef void(^UserFailure)(NSError *error);
  */
 -(void)getVerifyCodeWithLoginName:(NSString *)loginName andAppid:(NSString *)appid success: (UserSuccess)success failure:(UserFailure)failure;
 
+
+
 /**
  校验验证码
+
+ @param params 参数
+ @param success 成功回调
+ @param failure 失败回调
+ */
+-(void)checkVerifyCodeWithParams:(NSDictionary *)params success: (UserSuccess)success failure:(UserFailure)failure;
+/**
+ 校验验证码(旧)
  
  @param loginName 登录用户名
  @param vercode 验证码
@@ -43,8 +61,17 @@ typedef void(^UserFailure)(NSError *error);
  */
 -(void)checkVerifyCodeWithLoginName:(NSString *)loginName vercode:(NSString *)vercode appid:(NSString *)appid success: (UserSuccess)success failure:(UserFailure)failure;
 
+
 /**
  设置初始密码或重置密码
+
+ @param params 参数
+ @param success 成功回调
+ @param failure 失败回调
+ */
+-(void)setPasswordWithParams:(NSDictionary *)params success: (UserSuccess)success failure:(UserFailure)failure;
+/**
+ 设置初始密码或重置密码 (旧)
  
  @param password 密码
  @param token token
@@ -56,6 +83,14 @@ typedef void(^UserFailure)(NSError *error);
 /**
  登录
 
+ @param params 参数
+ @param success 成功回调
+ @param failure 失败回调
+ */
+-(void)loginWithParams:(NSDictionary *)params success: (UserSuccess)success failure:(UserFailure)failure;
+/**
+ 登录  (旧)
+
  @param loginName 登录用户名
  @param password 登录密码
  @param appid AppID
@@ -65,8 +100,17 @@ typedef void(^UserFailure)(NSError *error);
  */
 -(void)loginWithName:(NSString *)loginName password:(NSString *)password appid:(NSString *)appid extend:(NSString *)extend success: (UserSuccess)success failure:(UserFailure)failure;
 
+
 /**
  刷新token
+
+ @param params 参数
+ @param success 成功回调
+ @param failure 失败回调
+ */
+-(void)refreshTokenWithParams:(NSDictionary *)params success: (UserSuccess)success failure:(UserFailure)failure;
+/**
+ 刷新token   (旧)
  
  @param token 旧的token
  @param success 成功回调
