@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E762C752080512800DBF0A0 /* HJNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E762C732080512700DBF0A0 /* HJNetworking.h */; };
+		7E762C762080512800DBF0A0 /* HJNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E762C742080512700DBF0A0 /* HJNetworking.m */; };
+		7E762C7D20805C6000DBF0A0 /* FogV3Center.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E762C7B20805C6000DBF0A0 /* FogV3Center.h */; };
+		7E762C7E20805C6000DBF0A0 /* FogV3Center.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E762C7C20805C6000DBF0A0 /* FogV3Center.m */; };
 		7EE99B951F989E75003611FF /* FogV3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EE99B8B1F989E75003611FF /* FogV3.framework */; };
 		7EE99B9A1F989E75003611FF /* FogV3Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE99B991F989E75003611FF /* FogV3Tests.m */; };
 		7EE99B9C1F989E75003611FF /* FogV3.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EE99B8E1F989E75003611FF /* FogV3.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -36,6 +40,10 @@
 
 /* Begin PBXFileReference section */
 		3F5BD3703E6ED24A8F6693E6 /* Pods-FogV3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FogV3.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FogV3/Pods-FogV3.debug.xcconfig"; sourceTree = "<group>"; };
+		7E762C732080512700DBF0A0 /* HJNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJNetworking.h; sourceTree = "<group>"; };
+		7E762C742080512700DBF0A0 /* HJNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJNetworking.m; sourceTree = "<group>"; };
+		7E762C7B20805C6000DBF0A0 /* FogV3Center.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FogV3Center.h; sourceTree = "<group>"; };
+		7E762C7C20805C6000DBF0A0 /* FogV3Center.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FogV3Center.m; sourceTree = "<group>"; };
 		7EE99B8B1F989E75003611FF /* FogV3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FogV3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EE99B8E1F989E75003611FF /* FogV3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FogV3.h; sourceTree = "<group>"; };
 		7EE99B8F1F989E75003611FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -122,6 +130,8 @@
 			children = (
 				7EE99BDB1F99AC86003611FF /* ZBBonjourService */,
 				7EE99B8E1F989E75003611FF /* FogV3.h */,
+				7E762C7B20805C6000DBF0A0 /* FogV3Center.h */,
+				7E762C7C20805C6000DBF0A0 /* FogV3Center.m */,
 				7EE99BA51F98A0E2003611FF /* FogUserManager.h */,
 				7EE99BA61F98A0E2003611FF /* FogUserManager.m */,
 				7EE99BB31F998A3F003611FF /* FogMQTTManager.h */,
@@ -132,6 +142,8 @@
 				7EE99BD81F99A5BC003611FF /* FogDeviceManager.m */,
 				7EE99BB71F998C15003611FF /* MqttInfo.h */,
 				7EE99BB81F998C15003611FF /* MqttInfo.m */,
+				7E762C732080512700DBF0A0 /* HJNetworking.h */,
+				7E762C742080512700DBF0A0 /* HJNetworking.m */,
 				7EE99B8F1F989E75003611FF /* Info.plist */,
 			);
 			path = FogV3;
@@ -191,11 +203,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				7EE99BA71F98A0E2003611FF /* FogUserManager.h in Headers */,
+				7E762C7D20805C6000DBF0A0 /* FogV3Center.h in Headers */,
 				7EE99B9C1F989E75003611FF /* FogV3.h in Headers */,
 				7EE99BB91F998C15003611FF /* MqttInfo.h in Headers */,
 				7EE99BB51F998A3F003611FF /* FogMQTTManager.h in Headers */,
 				7EE99BD91F99A5BC003611FF /* FogDeviceManager.h in Headers */,
 				7EE99C2D1F99E5C3003611FF /* ZBBonjourService.h in Headers */,
+				7E762C752080512800DBF0A0 /* HJNetworking.h in Headers */,
 				7EE99BC01F99A182003611FF /* FogEasyLinkManager.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -337,9 +351,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				7EE99C311F99E7A2003611FF /* ZBBonjourService.m in Sources */,
+				7E762C7E20805C6000DBF0A0 /* FogV3Center.m in Sources */,
 				7EE99BBA1F998C15003611FF /* MqttInfo.m in Sources */,
 				7EE99BB61F998A3F003611FF /* FogMQTTManager.m in Sources */,
 				7EE99BC11F99A182003611FF /* FogEasyLinkManager.m in Sources */,
+				7E762C762080512800DBF0A0 /* HJNetworking.m in Sources */,
 				7EE99BA81F98A0E2003611FF /* FogUserManager.m in Sources */,
 				7EE99BDA1F99A5BC003611FF /* FogDeviceManager.m in Sources */,
 			);
